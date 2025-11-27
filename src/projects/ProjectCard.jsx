@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 const ProjectCard = ({ project, index, onClick, scrollProgress }) => {
   const [isHovered, setIsHovered] = useState(false);
 

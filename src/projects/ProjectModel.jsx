@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 
 const ProjectModal = ({ project, onClose }) => {
