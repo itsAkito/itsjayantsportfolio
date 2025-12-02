@@ -20,7 +20,7 @@ const Portfolio3D = () => {
       details:
         "A comprehensive telehealth platform connecting patients with healthcare providers. Features include video consultations, appointment scheduling, and medical records management.",
       link: "#",
-      github: "#",
+      github: "https://github.com/",
     },
     {
       id: 2,
@@ -34,7 +34,7 @@ const Portfolio3D = () => {
       details:
         "Real-time cryptocurrency analytics dashboard with live price tracking, portfolio management, and market analysis tools.",
       link: "#",
-      github: "#",
+      github: "https://github.com/",
     },
     {
       id: 3,
@@ -48,11 +48,11 @@ const Portfolio3D = () => {
       details:
         "Interactive 3D e-commerce platform with product customization, AR preview, and seamless checkout integration.",
       link: "#",
-      github: "#",
+      github: "https://github.com/",
     },
     {
       id: 4,
-      title: "Admin Panel",
+      title: "SaaS Application",
       desc: "SaaS Management",
       color: "#10b981",
       tech: ["Vue", "Firebase"],
@@ -60,9 +60,9 @@ const Portfolio3D = () => {
         "https://via.placeholder.com/400x300/10b981/ffffff?text=Admin+Panel",
       category: "fullstack",
       details:
-        "Complete SaaS admin dashboard with user management, analytics, reporting, and real-time data visualization.",
+        "Complete SaaS dashboard with user management, analytics, reporting, and real-time data visualization.",
       link: "#",
-      github: "#",
+      github: "https://github.com/itsAkito/SaaS-Application",
     },
     {
       id: 5,
@@ -76,7 +76,7 @@ const Portfolio3D = () => {
       details:
         "Interactive 3D portfolio website with smooth animations and modern design showcasing projects and skills.",
       link: "#",
-      github: "#",
+      github: "https://github.com/",
     },
     {
       id: 6,
@@ -190,7 +190,7 @@ const Portfolio3D = () => {
             Check out my GitHub for more code and contributions
           </p>
           <a
-            href="#"
+            href="https://github.com"
             className="inline-block px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg hover:shadow-lg hover:shadow-blue-500/50 transition font-semibold text-white"
           >
             Visit My GitHub
