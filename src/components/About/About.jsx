@@ -59,7 +59,7 @@ const About = () => {
                 <p className="text-sm text-gray-400">Happy Clients</p>
               </div>
               <div className="p-4 bg-gradient-to-br from-pink-500/20 to-pink-500/10 rounded-lg border border-pink-500/30">
-                <h4 className="text-2xl font-bold text-pink-400">3+</h4>
+                <h4 className="text-2xl font-bold text-pink-400">2+</h4>
                 <p className="text-sm text-gray-400">Years Active</p>
               </div>
             </div>

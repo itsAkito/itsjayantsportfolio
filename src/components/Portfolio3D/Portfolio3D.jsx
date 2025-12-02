@@ -76,7 +76,7 @@ const Portfolio3D = () => {
       details:
         "Interactive 3D portfolio website with smooth animations and modern design showcasing projects and skills.",
       link: "#",
-      github: "https://github.com/",
+      github: "https://github.com",
     },
     {
       id: 6,
@@ -190,7 +190,7 @@ const Portfolio3D = () => {
             Check out my GitHub for more code and contributions
           </p>
           <a
-            href="https://github.com"
+            href="https://github.com/"
             className="inline-block px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg hover:shadow-lg hover:shadow-blue-500/50 transition font-semibold text-white"
           >
             Visit My GitHub
