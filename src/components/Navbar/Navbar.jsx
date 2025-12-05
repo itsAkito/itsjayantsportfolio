@@ -19,10 +19,10 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-gray-900/95 backdrop-blur-md z-50 border-b border-gray-800">
+    <nav className="fixed top-0 w-full bg-black/40 backdrop-blur-xl z-50 border-b border-gray-800/50 hover:border-gray-700/50 transition-colors">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
-        <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+        <div className="text-2xl font-bold text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-purple-500 hover:scale-110 transition-transform">
           JK
         </div>
 
@@ -74,7 +74,7 @@ const Navbar = () => {
             offset={50}
             href="#contact"
           >
-            <button className="px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full hover:shadow-lg hover:shadow-blue-500/50 transition font-semibold">
+            <button className="px-6 py-2 bg-linear-to-r from-blue-500 to-purple-600 rounded-full hover:shadow-lg hover:shadow-blue-500/50 transition font-semibold text-white">
               Contact Me
             </button>
           </AnchorLink>

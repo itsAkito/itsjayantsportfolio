@@ -5,13 +5,13 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative w-full bg-gray-950 border-t border-gray-800">
+    <footer className="relative w-full bg-black/50 border-t border-gray-800 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-6 py-12">
         {/* Footer Content */}
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div>
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mb-2">
+            <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-purple-500 mb-2">
               JK
             </h3>
             <p className="text-gray-400 text-sm">
@@ -106,7 +106,7 @@ const Footer = () => {
         {/* Scroll to Top Button */}
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white hover:shadow-lg hover:shadow-blue-500/50 transition opacity-0 hover:opacity-100"
+          className="fixed bottom-8 right-8 w-12 h-12 bg-linear-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white hover:shadow-lg hover:shadow-blue-500/50 transition opacity-0 hover:opacity-100 z-40"
           style={{
             opacity:
               typeof window !== "undefined" && window.scrollY > 300 ? 1 : 0,

@@ -8,7 +8,7 @@ const About = () => {
     { name: "Tailwind CSS", level: 92 },
     { name: "Node.js", level: 80 },
     { name: "MongoDB", level: 82 },
-    {name:'PostgreSQL',level:78},
+    { name: 'PostgreSQL', level: 78 },
     { name: "Python", level: 75 },
     { name: "Three.js", level: 70 },
   ];
@@ -37,31 +37,37 @@ const About = () => {
               I'm a passionate Fullstack Developer
             </h3>
             <p className="text-gray-400 mb-4 leading-relaxed">
-              I'm an motivated Fullstack Developer with hands-on project experience
-              in building scalable web applications. My passion for fullstack
-              development is not only reflected in my projects but also in my desire
-              to help others learn and grow.
+              I'm a motivated Fullstack Developer currently building my skills through hands‑on projects and
+              real‑world learning.
+              I enjoy creating scalable web applications and exploring
+              both frontend and backend technologies.
+              As a student, I’m passionate about improving every day,
+              sharing what I learn, and helping others grow alongside me
             </p>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              I love turning complex problems into simple, beautiful, and intuitive
-              designs. I take pride in my work and always strive to deliver the best
-              possible solution to my clients and stakeholders.
+              I love turning complex problems into simple, beautiful, and
+              intuitive designs. I enjoy the challenge of creating clean user experiences
+              and meaningful solutions through thoughtful design and development. As a student,
+              I take pride in learning, experimenting, and constantly improving my skills to build projects
+              that are both functional and visually engaging.
             </p>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4">
               <div className="p-4 bg-gradient-to-br from-blue-500/20 to-blue-500/10 rounded-lg border border-blue-500/30">
                 <h4 className="text-2xl font-bold text-blue-400">8+</h4>
-                <p className="text-sm text-gray-400">Projects Done</p>
+                <p className="text-sm text-gray-400">Projects Completed</p>
               </div>
+
               <div className="p-4 bg-gradient-to-br from-purple-500/20 to-purple-500/10 rounded-lg border border-purple-500/30">
-                <h4 className="text-2xl font-bold text-purple-400">50+</h4>
-                <p className="text-sm text-gray-400">Happy Clients</p>
+                <h4 className="text-2xl font-bold text-purple-400">9+</h4>
+                <p className="text-sm text-gray-400">Technologies Learned</p>
               </div>
-              <div className="p-4 bg-gradient-to-br from-pink-500/20 to-pink-500/10 rounded-lg border border-pink-500/30">
-                <h4 className="text-2xl font-bold text-pink-400">2+</h4>
-                <p className="text-sm text-gray-400">Years Active</p>
-              </div>
+
+              {/* <div className="p-4 bg-gradient-to-br from-pink-500/20 to-pink-500/10 rounded-lg border border-pink-500/30">
+                <h4 className="text-2xl font-bold text-pink-400">20+</h4>
+                <p className="text-sm text-gray-400">Coding Challenges Solved</p>
+              </div> */}
             </div>
           </div>
 

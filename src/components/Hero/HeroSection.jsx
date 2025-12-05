@@ -49,12 +49,12 @@ const HeroSection = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col md:flex-row gap-4 justify-center mb-12">
-          
+
           {/* Resume download link (separate, not inside AnchorLink) */}
           <a
             href="/MyResume.pdf" // File should be inside public folder
             download="Jayant-Resume.pdf"
-            className="px-8 py-3 border-2 border-blue-500 rounded-lg bg-gradient-to-r from-blue-500 to-purple-300 hover:shadow-lg hover:shadow-indigo-400/40 transition font-semibold text-white"
+            className="px-8 py-3 border-2 border-blue-500 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-lg hover:shadow-indigo-400/40 transition font-semibold text-white"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -81,27 +81,6 @@ const HeroSection = () => {
               Get In Touch
             </button>
           </AnchorLink>
-
-        </div>
-
-        {/* Stats */}
-        <div className="grid grid-cols-3 gap-4 md:gap-8 mt-12 mb-5">
-          <div className="p-4 rounded-lg bg-gray-800/50 border border-gray-700">
-            <h3 className="text-2xl md:text-3xl font-bold text-blue-400">8+</h3>
-            <p className="text-sm text-gray-400">Projects Completed</p>
-          </div>
-          <div className="p-4 rounded-lg bg-gray-800/50 border border-gray-700 ">
-            <h3 className="text-2xl md:text-3xl font-bold text-purple-400">
-              3+
-            </h3>
-            <p className="text-sm text-gray-400">Years Experience</p>
-          </div>
-          <div className="p-4 rounded-lg bg-gray-800/50 border border-gray-700">
-            <h3 className="text-2xl md:text-3xl font-bold text-pink-400">
-              100%
-            </h3>
-            <p className="text-sm text-gray-400">Client Satisfaction</p>
-          </div>
         </div>
       </div>
 

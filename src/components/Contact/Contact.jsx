@@ -148,7 +148,7 @@ const Contact = () => {
                 ].map((social, i) => (
                   <a
                     key={i}
-                    href="#"
+                    href="https://github.com/"
                     className="w-12 h-12 rounded-lg bg-gray-800 border border-gray-700 flex items-center justify-center text-xl hover:border-blue-500 hover:bg-gray-700 transition"
                     title={social.name}
                   >

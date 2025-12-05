@@ -14,8 +14,8 @@ const Portfolio3D = () => {
       title: "Medical Hub",
       desc: "Telehealth Platform",
       color: "#3b82f6",
-      tech: ["React", "Node", "MongoDB"],
-      image: "https://via.placeholder.com/400x300/3b82f6/ffffff?text=Medical+Hub",
+      tech: ["React", "Node", "MongoDB","Express"],
+      image: "/images/DoctorAppointment.png",
       category: "fullstack",
       details:
         "A comprehensive telehealth platform connecting patients with healthcare providers. Features include video consultations, appointment scheduling, and medical records management.",
@@ -24,13 +24,13 @@ const Portfolio3D = () => {
     },
     {
       id: 2,
-      title: "Crypto Dashboard",
+      title: "AI Blog",
       desc: "Real-time Analytics",
       color: "#8b5cf6",
-      tech: ["Next.js", "Web3", "Tailwind"],
+      tech: ["React.js", "MongoDB", "Node.js","Tailwind","Express.js"],
       image:
-        "https://via.placeholder.com/400x300/8b5cf6/ffffff?text=Crypto+Dashboard",
-      category: "frontend",
+        "/images/AiBlogs.png",
+      category: "full Stack",
       details:
         "Real-time cryptocurrency analytics dashboard with live price tracking, portfolio management, and market analysis tools.",
       link: "#",
@@ -38,7 +38,7 @@ const Portfolio3D = () => {
     },
     {
       id: 3,
-      title: "E-Com Nike",
+      title: "E-Commerce",
       desc: "3D Product Configurator",
       color: "#ef4444",
       tech: ["Three.js", "Shopify API"],
@@ -53,15 +53,15 @@ const Portfolio3D = () => {
     {
       id: 4,
       title: "SaaS Application",
-      desc: "SaaS Management",
+      desc: "A modern SaaS solution that streamlines your operations, boosts productivity, and delivers real‑time insights — all in one intuitive dashboard.",
       color: "#10b981",
-      tech: ["Vue", "Firebase"],
+      tech: ["React.js", "Node.js","PostgresSQL","Tailwind css"],
       image:
-        "https://via.placeholder.com/400x300/10b981/ffffff?text=Admin+Panel",
+        "/images/SaaS Application.png",
       category: "fullstack",
       details:
         "Complete SaaS dashboard with user management, analytics, reporting, and real-time data visualization.",
-      link: "#",
+      link: "https://saaa-application.vercel.app/",
       github: "https://github.com/itsAkito/SaaS-Application",
     },
     {
@@ -71,12 +71,12 @@ const Portfolio3D = () => {
       color: "#f59e0b",
       tech: ["React", "Tailwind", "Three.js"],
       image:
-        "https://via.placeholder.com/400x300/f59e0b/ffffff?text=Portfolio",
+        "/images/MyPortimage.png",
       category: "frontend",
       details:
         "Interactive 3D portfolio website with smooth animations and modern design showcasing projects and skills.",
-      link: "#",
-      github: "https://github.com",
+      link: "https://my-portfolio-phi-three-51.vercel.app/",
+      github: "https://github.com/",
     },
     {
       id: 6,
