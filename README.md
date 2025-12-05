@@ -33,3 +33,7 @@ This website is built using:
   ├── components/      # Reusable UI components (Navbar, Footer, Cards)
   ├── pages/           # Main pages (Home, About, Projects)
   └── assets/          # Styles and static files
+
+
+## Run cmd
+** npm run dev
