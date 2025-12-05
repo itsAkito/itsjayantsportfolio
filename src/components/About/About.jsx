@@ -203,7 +203,7 @@ const About = () => {
               </button>
 
               <a
-                href="https://linkedin.com/in/yourprofile"
+                href="https://www.linkedin.com/in/jayant-kumar-428a9b359/"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-2 px-6 py-3 bg-gray-800 hover:bg-gray-700 border border-gray-700 text-gray-300 font-semibold rounded-xl transition-all"
