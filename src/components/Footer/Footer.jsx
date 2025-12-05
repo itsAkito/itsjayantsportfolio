@@ -44,8 +44,8 @@ const Footer = () => {
               {[
                 "Web Development",
                 "UI/UX Design",
-                "3D Animation",
-                "Consulting",
+                "Data Analytics",
+                "AI/ML",
               ].map((service) => (
                 <li key={service}>
                   <span className="text-gray-400 text-sm">{service}</span>
