@@ -20,7 +20,8 @@ This website is built using:
 * Project Showcase:** detailed sections for my major projects:
     * *Doctor Appointment Management System*
     * *Expense Tracker*
-    * *AgriTech Crop Management Concepts*
+    * *Blogging website with cms*
+    * *AI SaaS Application*
 * Resume Integration:** Direct download link for my CV.
 * Contact Section:** Easy way to get in touch.
 
