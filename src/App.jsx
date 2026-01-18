@@ -7,8 +7,7 @@ import Portfolio3D from "./components/Portfolio3D/Portfolio3D";
 import Footer from "./components/Footer/Footer";
 import Contact from "./components/Contact/Contact";
 
-function App
-() {
+function App() {
   return (
     <div className="bg-gray-900 text-white overflow-hidden">
       <Navbar />

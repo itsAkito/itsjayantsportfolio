@@ -62,7 +62,7 @@ const About = () => {
   ];
 
   const handleDownloadResume = () => {
-    const resumeUrl = "/MyResume.pdf";
+    const resumeUrl = "/JAYANT KUMAR RAJPOOTcv.pdf";
     const link = document.createElement("a");
     link.href = resumeUrl;
     link.download = "Jayant_Resume.pdf";

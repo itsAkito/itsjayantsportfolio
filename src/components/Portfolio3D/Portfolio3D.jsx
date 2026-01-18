@@ -1,12 +1,14 @@
 import React, { useState, useRef, useEffect } from "react";
 import ProjectCard from "../../projects/ProjectCard";
 import ProjectModal from "../../projects/ProjectModel";
-import { Code, LayoutGrid, Zap } from 'lucide-react'; // Import icons
+import { Code, LayoutGrid, Zap, Sparkles } from 'lucide-react';
+import './Portfolio3D.css';
 
 const Portfolio3D = () => {
     const [selectedProject, setSelectedProject] = useState(null);
     const [filter, setFilter] = useState("all");
     const [scrollProgress, setScrollProgress] = useState(0);
+    const [isVisible, setIsVisible] = useState(false);
     const sectionRef = useRef(null);
 
     // Filter categories data for cleaner rendering
@@ -153,6 +155,9 @@ const Portfolio3D = () => {
                 const end = rect.bottom - window.innerHeight * 0.2;
                 const progress = Math.max(0, Math.min(1, 1 - start / (end - start)));
                 setScrollProgress(progress);
+                
+                // Check if section is visible
+                setIsVisible(rect.top < window.innerHeight && rect.bottom > 0);
             }
         };
 
@@ -165,30 +170,34 @@ const Portfolio3D = () => {
         <section
             ref={sectionRef}
             id="portfolio"
-            className="relative w-full min-h-screen py-20 px-6 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900"
+            className="relative w-full min-h-screen py-20 px-6 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 portfolio-section"
         >
             {/* Background Elements */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute -top-40 right-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
-                <div className="absolute -bottom-40 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+                <div className="absolute -top-40 right-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
+                <div className="absolute -bottom-40 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
             </div>
 
             <div className="relative z-10 max-w-7xl mx-auto">
                 {/* Section Header */}
-                <div className="mb-8 text-center">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                <div className="mb-8 text-center section-header">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-4">
+                        <Sparkles className="w-4 h-4 text-blue-400" />
+                        <span className="text-sm text-blue-300 font-medium">Portfolio Showcase</span>
+                    </div>
+                    <h2 className="text-4xl md:text-5xl font-bold mb-4 section-title">
                         <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                             Featured Projects
                         </span>
                     </h2>
-                    <p className="text-gray-400 text-lg mb-2">
+                    <p className="text-gray-400 text-lg mb-2 section-subtitle">
                         Explore my latest work and interactive projects
                     </p>
-                    <div className="w-20 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
+                    <div className="w-20 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full divider"></div>
                 </div>
 
                 {/* Sub-Header and Divider */}
-                <div className="text-center mb-12">
+                <div className="text-center mb-12 sub-header">
                     <h3 className="text-xl font-semibold text-gray-300 mb-4">
                         Innovative Solutions Across the Stack
                     </h3>
@@ -197,12 +206,12 @@ const Portfolio3D = () => {
 
 
                 {/* Filter Buttons (Pill-shaped tabs) */}
-                <div className="flex flex-wrap justify-center gap-4 mb-16">
+                <div className="flex flex-wrap justify-center gap-4 mb-16 filter-buttons">
                     {categories.map((btn) => (
                         <button
                             key={btn.value}
                             onClick={() => setFilter(btn.value)}
-                            className={`px-5 py-2 rounded-full font-semibold transition-all duration-300 flex items-center gap-2 text-sm ${
+                            className={`px-5 py-2 rounded-full font-semibold transition-all duration-300 flex items-center gap-2 text-sm filter-btn ${
                                 filter === btn.value
                                     ? "bg-gradient-to-r from-blue-600 to-purple-700 text-white shadow-md shadow-blue-500/30 transform scale-105"
                                     : "bg-gray-800 text-gray-300 hover:bg-gray-700 border border-gray-700 hover:border-blue-500/30"
@@ -215,10 +224,10 @@ const Portfolio3D = () => {
                 </div>
 
                 {/* Projects Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 projects-grid">
                     {filteredProjects.length > 0 ? (
                         filteredProjects.map((project, index) => (
-                            <div key={project.id} className="animate-fadeIn" style={{ animationDelay: `${index * 0.1}s` }}>
+                            <div key={project.id} className="animate-fadeIn project-grid-item" style={{ animationDelay: `${index * 0.1}s` }}>
                                 <ProjectCard
                                     project={project}
                                     index={index}
@@ -229,7 +238,7 @@ const Portfolio3D = () => {
                         ))
                     ) : (
                         // Empty State UI
-                        <div className="col-span-full text-center py-20 bg-gray-800/50 rounded-xl border border-gray-700">
+                        <div className="col-span-full text-center py-20 bg-gray-800/50 rounded-xl border border-gray-700 empty-state">
                             <h3 className="text-2xl font-bold text-gray-300 mb-2">
                                 No Projects Found
                             </h3>
