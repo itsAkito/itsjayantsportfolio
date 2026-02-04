@@ -1,8 +1,5 @@
  # 👨‍💻 Shivam's Portfolio Website
 
-![Portfolio Preview](https://via.placeholder.com/1000x500?text=Portfolio+Preview+Image) 
-*(Note: Replace the link above with a screenshot of your actual site later)*
-
 ## 🚀 About Me
 Hi, I'm **Shivam**, a passionate Full Stack Developer specializing in the **MERN Stack** (MongoDB, Express, React, Node.js,PostgresSQL). 
 
