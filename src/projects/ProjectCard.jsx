@@ -17,7 +17,7 @@ const ProjectCard = ({ project, index, onClick, scrollProgress }) => {
       y: e.clientY - rect.top,
     });
   };
-
+  
   return (
     <div
       onClick={onClick}
