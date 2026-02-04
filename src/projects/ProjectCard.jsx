@@ -31,11 +31,12 @@ const ProjectCard = ({ project, index, onClick, scrollProgress }) => {
         opacity: 0.6 + scrollProgress * 0.4,
       }}
     >
-      <div className="relative h-full rounded-2xl overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 transition-all duration-500 hover:border-blue-500/50 group-hover:shadow-2xl group-hover:shadow-blue-500/20 project-card"
+      <div className="relative h-full flex flex-col rounded-2xl overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 transition-all duration-500 hover:border-blue-500/50 group-hover:shadow-2xl group-hover:shadow-blue-500/20 project-card"
         style={{
           background: isHovered 
             ? `linear-gradient(135deg, rgba(31, 41, 55, 0.9), rgba(17, 24, 39, 0.9))`
             : 'linear-gradient(to bottom right, rgb(31, 41, 55), rgb(17, 24, 39))',
+          minHeight: '500px',
         }}
       >
         
@@ -79,7 +80,7 @@ const ProjectCard = ({ project, index, onClick, scrollProgress }) => {
         </div>
 
         {/* Content */}
-        <div className="relative p-6 flex flex-col justify-between h-[calc(100%-12rem)]">
+        <div className="relative p-6 flex flex-col flex-1">
           <div>
             <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors project-title">
               {project.title}
@@ -105,7 +106,7 @@ const ProjectCard = ({ project, index, onClick, scrollProgress }) => {
           </div>
 
           {/* --- Consolidated Footer / Action Area --- */}
-          <div className="pt-4 border-t border-gray-700 action-area">
+          <div className="mt-auto pt-4 border-t border-gray-700 action-area">
             {isHovered ? (
               <div className="flex gap-3 pt-1 animate-fadeIn button-group">
                 {/* View Live Link (Primary Action) */}

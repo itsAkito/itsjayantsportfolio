@@ -138,6 +138,24 @@ const Portfolio3D = () => {
                 "Designed responsive interface with intuitive category management and filtering options"
             ]
         },
+        {
+            id: 7,
+            title: "TrustHire Blue-Collar Platform",
+            desc: "Modern Blue Collar Platform with verified workers, trusted opportunities",
+            color: "#10b981",
+            tech: ["React.js","Express.js", "Node.js", "PostgresSQL", "CSS", "Tailwind css"],
+            image: "/images/TrustHire.png",
+            category: "fullstack",
+            details: "TrustHire is a blue‑collar hiring platform that connects skilled workers with employers through verified, secure, and mobile‑friendly access. With OTP authentication, ratings, and document checks, it ensures trust and reliability. Employers quickly find nearby talent, while workers showcase skills without resumes, making recruitment faster, safer, and more transparent.",
+            link: "https://trusthire-platform.vercel.app/", 
+            github: "https://github.com/itsAkito/TrustHire",
+            contributions: [
+                "Built secure OTP authentication and user verification system for workers and employers",
+                "Implemented real-time worker search and matching algorithm with location-based filtering",
+                "Designed rating and review system to build trust within the blue-collar marketplace",
+                "Integrated document verification and background checks for worker credibility"
+            ]
+        },
     ];
 
 
@@ -224,10 +242,10 @@ const Portfolio3D = () => {
                 </div>
 
                 {/* Projects Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 projects-grid">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 projects-grid auto-rows-max">
                     {filteredProjects.length > 0 ? (
                         filteredProjects.map((project, index) => (
-                            <div key={project.id} className="animate-fadeIn project-grid-item" style={{ animationDelay: `${index * 0.1}s` }}>
+                            <div key={project.id} className="animate-fadeIn project-grid-item h-full" style={{ animationDelay: `${index * 0.1}s` }}>
                                 <ProjectCard
                                     project={project}
                                     index={index}
