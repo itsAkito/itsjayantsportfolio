@@ -1,22 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
-import ProjectCard from "../../projects/ProjectCard";
-import ProjectModal from "../../projects/ProjectModel";
-import { Code, LayoutGrid, Zap, Sparkles } from 'lucide-react';
 import './Portfolio3D.css';
+import { ChevronLeft, ChevronRight, Github, ExternalLink } from 'lucide-react';
 
 const Portfolio3D = () => {
-    const [selectedProject, setSelectedProject] = useState(null);
-    const [filter, setFilter] = useState("all");
     const [scrollProgress, setScrollProgress] = useState(0);
     const [isVisible, setIsVisible] = useState(false);
+    const [currentIndex, setCurrentIndex] = useState(0);
     const sectionRef = useRef(null);
-
-    // Filter categories data for cleaner rendering
-    const categories = [
-        { label: "All Projects", value: "all", icon: LayoutGrid },
-        { label: "Fullstack", value: "fullstack", icon: Zap },
-        { label: "Frontend", value: "frontend", icon: Code }, // Using Code for 3D since it relates to unique tech
-    ];
 
     const projects = [
         {
@@ -24,11 +14,10 @@ const Portfolio3D = () => {
             title: "Medical Hub",
             desc: "Health Platform",
             color: "#3b82f6",
-            tech: ["React", "Node.js", "MongoDB", "Express",""],
+            tech: ["React", "Node.js", "MongoDB", "Express"],
             image: "/images/DoctorAppointment.png",
             category: "fullstack",
-            details:
-                "A comprehensive telehealth platform connecting patients with healthcare providers. Features include video consultations, appointment scheduling, and medical records management.",
+            details: "A comprehensive telehealth platform connecting patients with healthcare providers. Features include video consultations, appointment scheduling, and medical records management.",
             link: "#",
             github: "https://github.com/",
             contributions: [
@@ -44,11 +33,9 @@ const Portfolio3D = () => {
             desc: "Blog platform with CMS Support",
             color: "#8b5cf6",
             tech: ["React.js", "MongoDB", "Node.js", "Tailwind", "Express.js"],
-            image:
-                "/images/AiBlogs.png",
+            image: "/images/AiBlogs.png",
             category: "fullstack",
-            details:
-                "A blogging platform with Content Management System (CMS) support allowing users to create ,edit,and publish articles seamlessly.",
+            details: "A blogging platform with Content Management System (CMS) support allowing users to create, edit, and publish articles seamlessly.",
             link: "https://blogging-website1-nine.vercel.app/",
             github: "https://github.com/",
             contributions: [
@@ -58,19 +45,16 @@ const Portfolio3D = () => {
                 "Implemented user authentication and role-based access control for content creators"
             ]
         },
-    
         {
             id: 3,
             title: "SaaS Application",
             desc: "Modern SaaS platform with multiple features",
             color: "#10b981",
-            tech: ["React.js", "Node.js", "PostgresSQL", "Tailwind css"],
-            image:
-                "/images/SaaS Application.png",
+            tech: ["React.js", "Node.js", "PostgreSQL", "Tailwind CSS"],
+            image: "/images/SaaS Application.png",
             category: "fullstack",
-            details:
-                "A modern SaaS Application with Article generation, image generation, review resume, remove bg and more features.",
-            link: "https://saaa-application.vercel.app/", 
+            details: "A modern SaaS Application with Article generation, image generation, review resume, remove bg and more features.",
+            link: "https://saaa-application.vercel.app/",
             github: "https://github.com/itsAkito/SaaS-Application",
             contributions: [
                 "Architected multi-feature SaaS platform with scalable Node.js backend and PostgreSQL database",
@@ -85,30 +69,27 @@ const Portfolio3D = () => {
             desc: "Personal Showcase",
             color: "#f59e0b",
             tech: ["React", "Tailwind", "Three.js"],
-            image:"/images/MyPortimage.png",
+            image: "/images/MyPortimage.png",
             category: "frontend",
+            details: "Interactive 3D portfolio website with smooth animations and modern design showcasing projects and skills.",
+            link: "https://my-portfolio-phi-three-51.vercel.app/",
+            github: "https://github.com/",
             contributions: [
                 "Created immersive 3D experience using Three.js with smooth camera transitions and animations",
                 "Designed responsive React components with Tailwind CSS for modern, visually appealing layout",
                 "Implemented scroll-based animations and parallax effects for enhanced user engagement",
                 "Optimized performance and accessibility across all devices and browsers"
-            ],
-            details:
-                "Interactive 3D portfolio website with smooth animations and modern design showcasing projects and skills.",
-            link: "https://my-portfolio-phi-three-51.vercel.app/",
-            github: "https://github.com/",
+            ]
         },
         {
             id: 5,
             title: "Hotel Management Application",
             desc: "Management System with Booking features",
             color: "#06b6d4",
-            tech: ["Next.js","TypeScript","Prisma","Tailwind CSS","Node.js"],
-            image:
-                "/images/HotelPhoto.png",
+            tech: ["Next.js", "TypeScript", "Prisma", "Tailwind CSS", "Node.js"],
+            image: "/images/HotelPhoto.png",
             category: "fullstack",
-            details:
-                "A modern full‑stack application built with Next.js, TypeScript, and Prisma that enables hotel owners to manage properties and bookings while guests can seamlessly search, book, and pay online.",
+            details: "A modern full-stack application built with Next.js, TypeScript, and Prisma that enables hotel owners to manage properties and bookings while guests can seamlessly search, book, and pay online.",
             link: "#",
             github: "https://github.com/",
             contributions: [
@@ -123,12 +104,10 @@ const Portfolio3D = () => {
             title: "Expense Tracker System",
             desc: "Finance Management",
             color: "#10b981",
-            tech: ["JavaScript","HTML","CSS"],
-            image:
-                "/images/Expense Tracker.png",
+            tech: ["JavaScript", "HTML", "CSS"],
+            image: "/images/Expense Tracker.png",
             category: "frontend",
-            details:
-                "A simple expense tracker system that helps users to manage their daily expenses effectively with an intuitive interface.",
+            details: "A simple expense tracker system that helps users to manage their daily expenses effectively with an intuitive interface.",
             link: "#",
             github: "https://github.com/itsAkito/Expense-Tracker",
             contributions: [
@@ -141,13 +120,13 @@ const Portfolio3D = () => {
         {
             id: 7,
             title: "TrustHire Blue-Collar Platform",
-            desc: "Modern Blue Collar Platform with verified workers, trusted opportunities",
+            desc: "Modern Blue Collar Platform with verified workers",
             color: "#10b981",
-            tech: ["React.js","Express.js", "Node.js", "PostgresSQL", "CSS", "Tailwind css"],
+            tech: ["React.js", "Express.js", "Node.js", "PostgreSQL", "CSS", "Tailwind CSS"],
             image: "/images/TrustHire.png",
             category: "fullstack",
-            details: "TrustHire is a blue‑collar hiring platform that connects skilled workers with employers through verified, secure, and mobile‑friendly access. With OTP authentication, ratings, and document checks, it ensures trust and reliability. Employers quickly find nearby talent, while workers showcase skills without resumes, making recruitment faster, safer, and more transparent.",
-            link: "https://trusthire-platform.vercel.app/", 
+            details: "TrustHire is a blue-collar hiring platform that connects skilled workers with employers through verified, secure, and mobile-friendly access. With OTP authentication, ratings, and document checks, it ensures trust and reliability.",
+            link: "https://trusthire-platform.vercel.app/",
             github: "https://github.com/itsAkito/TrustHire",
             contributions: [
                 "Built secure OTP authentication and user verification system for workers and employers",
@@ -158,148 +137,196 @@ const Portfolio3D = () => {
         },
     ];
 
-
-    const filteredProjects =
-        filter === "all"
-            ? projects
-            : projects.filter((p) => p.category === filter);
-
+    // Scroll visibility tracking
     useEffect(() => {
         const handleScroll = () => {
             if (sectionRef.current) {
                 const rect = sectionRef.current.getBoundingClientRect();
-                // Calculate progress: 1 when section enters view from top, 0 when it leaves from bottom
                 const start = rect.top - window.innerHeight * 0.8;
                 const end = rect.bottom - window.innerHeight * 0.2;
                 const progress = Math.max(0, Math.min(1, 1 - start / (end - start)));
                 setScrollProgress(progress);
-                
-                // Check if section is visible
                 setIsVisible(rect.top < window.innerHeight && rect.bottom > 0);
             }
         };
 
         window.addEventListener("scroll", handleScroll);
-        // Clean up the event listener on component unmount
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
+    // Auto-scroll carousel when section is visible
+    useEffect(() => {
+        if (!isVisible) return;
+
+        const interval = setInterval(() => {
+            setCurrentIndex((prev) => (prev + 1) % projects.length);
+        }, 5000); // Change project every 5 seconds
+
+        return () => clearInterval(interval);
+    }, [isVisible, projects.length]);
+
+    const nextProject = () => {
+        setCurrentIndex((prev) => (prev + 1) % projects.length);
+    };
+
+    const prevProject = () => {
+        setCurrentIndex((prev) => (prev - 1 + projects.length) % projects.length);
+    };
+
+    const project = projects[currentIndex];
 
     return (
         <section
             ref={sectionRef}
             id="portfolio"
-            className="relative w-full min-h-screen py-20 px-6 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 portfolio-section"
+            className="relative w-full py-20 px-6 z-10"
         >
             {/* Background Elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
                 <div className="absolute -top-40 right-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
                 <div className="absolute -bottom-40 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
             </div>
 
-            <div className="relative z-10 max-w-7xl mx-auto">
-                {/* Section Header */}
-                <div className="mb-8 text-center section-header">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-4">
-                        <Sparkles className="w-4 h-4 text-blue-400" />
-                        <span className="text-sm text-blue-300 font-medium">Portfolio Showcase</span>
-                    </div>
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4 section-title">
+            <div className="relative z-10 max-w-full px-0">
+                {/* Section Title */}
+                <div className="mb-16 text-center max-w-7xl mx-auto">
+                    <h2 className="text-4xl md:text-5xl font-bold mb-4">
                         <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-                            Featured Projects
+                            My Projects
                         </span>
                     </h2>
-                    <p className="text-gray-400 text-lg mb-2 section-subtitle">
-                        Explore my latest work and interactive projects
-                    </p>
-                    <div className="w-20 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full divider"></div>
+                    <div className="w-20 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
                 </div>
 
-                {/* Sub-Header and Divider */}
-                <div className="text-center mb-12 sub-header">
-                    <h3 className="text-xl font-semibold text-gray-300 mb-4">
-                        Innovative Solutions Across the Stack
-                    </h3>
-                    <hr className="border-t border-gray-700 max-w-lg mx-auto" />
-                </div>
-
-
-                {/* Filter Buttons (Pill-shaped tabs) */}
-                <div className="flex flex-wrap justify-center gap-4 mb-16 filter-buttons">
-                    {categories.map((btn) => (
-                        <button
-                            key={btn.value}
-                            onClick={() => setFilter(btn.value)}
-                            className={`px-5 py-2 rounded-full font-semibold transition-all duration-300 flex items-center gap-2 text-sm filter-btn ${
-                                filter === btn.value
-                                    ? "bg-gradient-to-r from-blue-600 to-purple-700 text-white shadow-md shadow-blue-500/30 transform scale-105"
-                                    : "bg-gray-800 text-gray-300 hover:bg-gray-700 border border-gray-700 hover:border-blue-500/30"
-                            }`}
-                        >
-                            <btn.icon className="w-4 h-4" />
-                            {btn.label}
-                        </button>
-                    ))}
-                </div>
-
-                {/* Projects Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 projects-grid auto-rows-max">
-                    {filteredProjects.length > 0 ? (
-                        filteredProjects.map((project, index) => (
-                            <div key={project.id} className="animate-fadeIn project-grid-item h-full" style={{ animationDelay: `${index * 0.1}s` }}>
-                                <ProjectCard
-                                    project={project}
-                                    index={index}
-                                    onClick={() => setSelectedProject(project)}
-                                    scrollProgress={scrollProgress}
-                                />
-                            </div>
-                        ))
-                    ) : (
-                        // Empty State UI
-                        <div className="col-span-full text-center py-20 bg-gray-800/50 rounded-xl border border-gray-700 empty-state">
-                            <h3 className="text-2xl font-bold text-gray-300 mb-2">
-                                No Projects Found
-                            </h3>
-                            <p className="text-gray-500">
-                                Try selecting "All Projects" or checking back later.
-                            </p>
-                            {/* Clear filter button */}
-                            {filter !== 'all' && (
-                                <button
-                                    onClick={() => setFilter('all')}
-                                    className="mt-4 px-4 py-2 text-sm text-blue-400 border border-blue-500/30 rounded-full hover:bg-blue-500/10 transition"
-                                >
-                                    Show All Projects
-                                </button>
-                            )}
+                {/* Projects Carousel */}
+                <div className="relative">
+                    {/* Main Project Card - Alternating Layout */}
+                    <div className={`flex gap-8 mb-16 mx-auto max-w-7xl items-center transition-all duration-500 opacity-0 animate-fadeIn ${currentIndex % 2 === 0 ? '' : 'flex-row-reverse'}`} style={{animation: 'fadeIn 0.6s ease-in-out forwards'}}>
+                        <style>{`
+                          @keyframes fadeIn {
+                            from { opacity: 0; transform: translateY(20px); }
+                            to { opacity: 1; transform: translateY(0); }
+                          }
+                          .animate-fadeIn { animation: fadeIn 0.6s ease-in-out forwards; }
+                        `}</style>
+                        {/* Image */}
+                        <div className="relative h-80 lg:h-96 w-full lg:w-1/2 flex-shrink-0 rounded-2xl overflow-hidden group">
+                            <img
+                                src={project.image}
+                                alt={project.title}
+                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                            <div
+                                className="absolute bottom-0 left-0 right-0 h-1"
+                                style={{ backgroundColor: project.color }}
+                            ></div>
                         </div>
-                    )}
-                </div>
 
-                {/* Project Modal */}
-                {selectedProject && (
-                    <ProjectModal
-                        project={selectedProject}
-                        onClose={() => setSelectedProject(null)}
-                    />
-                )}
+                        {/* Content */}
+                        <div className="space-y-6 w-full lg:w-1/2 flex flex-col justify-center">
+                            <div>
+                                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2">
+                                    {project.title}
+                                </h3>
+                                <p
+                                    className="text-lg font-semibold"
+                                    style={{ color: project.color }}
+                                >
+                                    {project.desc}
+                                </p>
+                            </div>
 
-                {/* CTA Section */}
-                <div className="mt-16 text-center p-10 rounded-2xl bg-gradient-to-r from-gray-700/50 to-gray-800/70 border border-gray-700 backdrop-blur-sm">
-                    <h3 className="text-3xl font-bold text-white mb-4">
-                        Curious for more code?
-                    </h3>
-                    <p className="text-gray-400 mb-6">
-                        Find a complete list of repositories, contributions, and open-source work on my GitHub.
-                    </p>
-                    <a
-                        href="https://github.com/"
-                        className="inline-block px-10 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg hover:shadow-xl hover:shadow-blue-500/30 transition font-bold text-white transform hover:scale-[1.02]"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Visit My GitHub
-                    </a>
+                            <p className="text-gray-300 text-lg leading-relaxed">
+                                {project.details}
+                            </p>
+
+                            {/* Tech Stack */}
+                            <div className="space-y-3">
+                                <h4 className="text-white font-semibold">Tech Stack:</h4>
+                                <div className="flex flex-wrap gap-2">
+                                    {project.tech.map((tech, idx) => (
+                                        <span
+                                            key={idx}
+                                            className="px-4 py-2 rounded-full text-sm font-medium text-white"
+                                            style={{
+                                                backgroundColor: project.color + "30",
+                                                border: `1px solid ${project.color}`,
+                                            }}
+                                        >
+                                            {tech}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Links */}
+                            <div className="flex gap-4 pt-4">
+                                {project.link !== "#" && (
+                                    <a
+                                        href={project.link}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-semibold rounded-xl transition-all"
+                                    >
+                                        <ExternalLink className="w-5 h-5" />
+                                        Live Demo
+                                    </a>
+                                )}
+                                {project.github !== "#" && (
+                                    <a
+                                        href={project.github}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className="flex items-center gap-2 px-6 py-3 bg-gray-800 hover:bg-gray-700 border border-gray-700 text-gray-300 font-semibold rounded-xl transition-all"
+                                    >
+                                        <Github className="w-5 h-5" />
+                                        GitHub
+                                    </a>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Carousel Controls */}
+                    <div className="flex items-center justify-between mt-12">
+                        <button
+                            onClick={prevProject}
+                            className="p-3 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-full text-white transition-all hover:border-blue-500 group"
+                        >
+                            <ChevronLeft className="w-6 h-6 group-hover:text-blue-400" />
+                        </button>
+
+                        {/* Dots Indicator */}
+                        <div className="flex gap-3">
+                            {projects.map((_, idx) => (
+                                <button
+                                    key={idx}
+                                    onClick={() => setCurrentIndex(idx)}
+                                    className={`w-3 h-3 rounded-full transition-all ${
+                                        idx === currentIndex
+                                            ? "bg-blue-500 w-8"
+                                            : "bg-gray-600 hover:bg-gray-500"
+                                    }`}
+                                ></button>
+                            ))}
+                        </div>
+
+                        <button
+                            onClick={nextProject}
+                            className="p-3 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-full text-white transition-all hover:border-blue-500 group"
+                        >
+                            <ChevronRight className="w-6 h-6 group-hover:text-blue-400" />
+                        </button>
+                    </div>
+
+                    {/* Project Counter */}
+                    <div className="text-center mt-8">
+                        <p className="text-gray-400">
+                            Project <span className="text-blue-400 font-bold">{currentIndex + 1}</span> of{" "}
+                            <span className="text-blue-400 font-bold">{projects.length}</span>
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>

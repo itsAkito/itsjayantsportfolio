@@ -6,6 +6,7 @@ import './ProjectCard.css';
 const ProjectCard = ({ project, index, onClick, scrollProgress }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   // Define fallback values
   const accentColor = project.color || '#3b82f6'; // Default to blue
@@ -65,9 +66,14 @@ const ProjectCard = ({ project, index, onClick, scrollProgress }) => {
 
         {/* Image Container */}
         <div className="relative h-48 overflow-hidden bg-gradient-to-br from-gray-700 to-gray-800 project-image-container">
+          {!imageLoaded && (
+            <div className="absolute inset-0 animate-pulse bg-gray-700/50 z-10"></div>
+          )}
           <img
             src={project.image}
             alt={project.title}
+            loading="lazy"
+            onLoad={() => setImageLoaded(true)}
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 project-image"
           />
           <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500"></div>

@@ -7,6 +7,7 @@ import './HeroSection.css';
 
 const HeroSection = () => {
   const [scrollY, setScrollY] = useState(0);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -17,7 +18,7 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative w-full min-h-screen flex items-center justify-center pt-20 px-6 overflow-hidden"
+      className="relative w-full min-h-screen flex items-start justify-start pt-32 px-12 overflow-hidden"
       style={{
         backgroundPosition: `0 ${scrollY * 0.5}px`,
       }}
@@ -29,10 +30,10 @@ const HeroSection = () => {
       </div>
 
       {/* Glass Card Container */}
-      <div className="relative z-10 max-w-5xl mx-auto bg-gray-900/60 backdrop-blur-md p-10 md:p-14 rounded-3xl border border-gray-800 shadow-lg text-center hero-card">
+      <div className="relative z-10 max-w-5xl bg-gray-900/60 backdrop-blur-md p-10 md:p-14 rounded-3xl border border-gray-800 shadow-lg text-left hero-card">
         
         {/* Status Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-8 status-badge">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-8 status-badge" style={{alignSelf: 'flex-start'}}>
           <span className="relative flex h-3 w-3">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
@@ -41,14 +42,19 @@ const HeroSection = () => {
         </div>
 
         {/* Profile + Status Row */}
-<div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-8 profile-section">
+<div className="flex flex-col md:flex-row items-start justify-start gap-4 mb-8 profile-section">
 
   {/* Profile Image with Glow */}
   <div className="relative inline-block profile-image-container">
     <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur opacity-30"></div>
+    {!imageLoaded && (
+      <div className="absolute inset-0 bg-gray-700 rounded-full animate-pulse"></div>
+    )}
     <img
       src={jayant}
       alt="Jayant Kumar"
+      loading="lazy"
+      onLoad={() => setImageLoaded(true)}
       className="relative w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-gray-800 profile-image"
     />
   </div>
@@ -84,7 +90,7 @@ const HeroSection = () => {
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center cta-buttons">
+        <div className="flex flex-col sm:flex-row gap-4 justify-start items-start cta-buttons">
           
           {/* Resume Button */}
           {/* <a

@@ -1,0 +1,250 @@
+/* Carousel Animations and Styling */
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+}
+
+/* Carousel Wrapper */
+.carousel-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Carousel Container */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+}
+
+/* Carousel Track */
+.carousel-track {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  gap: 2rem;
+  padding: 1rem 0;
+  width: 100%;
+}
+
+/* Carousel Item */
+.carousel-item {
+  animation: slideIn 0.5s ease-out;
+  width: 100%;
+  min-width: 300px;
+}
+
+/* Carousel Navigation Buttons */
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
+  border: 2px solid rgba(59, 130, 246, 0.4);
+  color: rgba(59, 130, 246, 0.8);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 10;
+  backdrop-filter: blur(8px);
+}
+
+.carousel-nav:hover {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.4), rgba(139, 92, 246, 0.4));
+  border-color: rgba(59, 130, 246, 0.8);
+  color: rgba(96, 165, 250, 1);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-nav:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-nav-prev {
+  left: -60px;
+}
+
+.carousel-nav-next {
+  right: -60px;
+}
+
+/* Carousel Dots */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  animation: slideIn 0.5s ease-out 0.2s backwards;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(107, 114, 128, 0.5);
+  border: 2px solid rgba(107, 114, 128, 0.3);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.carousel-dot:hover {
+  background: rgba(59, 130, 246, 0.6);
+  border-color: rgba(59, 130, 246, 0.8);
+  transform: scale(1.2);
+}
+
+.carousel-dot.active {
+  width: 24px;
+  background: linear-gradient(90deg, rgb(59, 130, 246), rgb(139, 92, 246));
+  border-color: rgba(59, 130, 246, 1);
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+/* Carousel Hint */
+.carousel-hint {
+  text-align: center;
+  color: rgba(107, 114, 128, 0.6);
+  font-size: 0.875rem;
+  animation: slideIn 0.5s ease-out 0.3s backwards;
+}
+
+.carousel-hint:hover {
+  color: rgba(96, 165, 250, 0.8);
+  transition: color 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .carousel-nav-prev {
+    left: -50px;
+  }
+
+  .carousel-nav-next {
+    right: -50px;
+  }
+
+  .carousel-track {
+    gap: 1.5rem;
+  }
+
+  .carousel-item {
+    min-width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-track {
+    gap: 1rem;
+  }
+
+  .carousel-item {
+    min-width: 250px;
+  }
+
+  .carousel-nav {
+    width: 38px;
+    height: 38px;
+  }
+
+  .carousel-nav-prev {
+    left: -45px;
+  }
+
+  .carousel-nav-next {
+    right: -45px;
+  }
+
+  .carousel-nav svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .carousel-track {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0;
+  }
+
+  .carousel-item {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .carousel-nav {
+    position: fixed;
+    top: auto;
+    bottom: 20px;
+    width: 40px;
+    height: 40px;
+    z-index: 30;
+    transform: none;
+  }
+
+  .carousel-nav-prev {
+    left: 20px;
+    right: auto;
+  }
+
+  .carousel-nav-next {
+    right: 20px;
+    left: auto;
+  }
+
+  .carousel-nav:hover {
+    transform: scale(1.1);
+  }
+
+  .carousel-hint {
+    display: none;
+  }
+}
+
+/* Dark mode optimization */
+@media (prefers-color-scheme: dark) {
+  .carousel-nav {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(139, 92, 246, 0.15));
+  }
+
+  .carousel-dot {
+    background: rgba(75, 85, 99, 0.6);
+    border-color: rgba(75, 85, 99, 0.4);
+  }
+}
+
+/* Touch-friendly adjustments */
+@media (hover: none) and (pointer: coarse) {
+  .carousel-nav {
+    opacity: 0.8;
+  }
+
+  .carousel-nav:active {
+    opacity: 1;
+  }
+}
